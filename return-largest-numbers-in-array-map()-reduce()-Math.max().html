@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Return Largest Numbers in Arrays</title>
+  </head>
+<body>
+
+<!-- 
+The map() method creates a new array with the results of calling a provided function on every element in this array. Using map will call a provided callback function once for each element in an array, in order, and constructs a new array from the results.
+
+The reduce() method applies a function against an accumulator and each value of the array to reduce it to a single value.
+
+-->
+    
+<script>
+
+function largestOfFour(mainArray) {
+  // Call the provided function on every element (sub-array)in the main array
+  return mainArray.map(function(subArray){
+    // Call the reduce() method on each sub-array  
+    return subArray.reduce(function (accumulator, currentValue) {
+      return Math.max(accumulator, currentValue);
+    }, 0); // 'initialValue': Sets initial value of accumulator to 0
+  });
+}
+    
+/* The reduce() method returns the largest number from each sub-array to the map() method, which constructs a new array from the results. Calling the largestOfFour function returns the new array.
+
+> The Math.max() function returns the largest of zero or more numbers.
+> reduce() passes Math.max an accumulator and each value of the array.
+
+*/
+    
+    
+console.log(
+//largestOfFour([4, 5, 1, 3])
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]) 
+//largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]) 
+//largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])
+);
+ 
+    
+    
+</script>
+
+</body>
+</html>

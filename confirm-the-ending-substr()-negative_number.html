@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Confirm the ending</title>
+  </head>
+<body>
+
+<!-- 
+Check if a string (first argument, str) ends with the given target string (second argument, target).
+_________________________________________
+
+The substr() method returns the characters in a string beginning at the specified location through the specified number of characters.
+
+Why are you using string.substr(-target.length)?
+
+If the target.length is negative, the substr() method will start the counting from the end of the string, which is what you want in this code challenge.
+
+So here string.substr(-target.length) will get the last index of the string ‘Bastian’ which is ‘n’.
+
+Then you check whether string.substr(-target.length) equals the target (true or false).
+-->
+    
+<script>
+
+//function confirmEnding(string, target) {
+//  // Step 1. Use the substr method
+//  if (string.substr(-target.length) === target) {
+//  
+//  // What does "if (string.substr(-target.length) === target)" represents?
+//  // The string is 'Bastian' and the target is 'n' 
+//  // target.length = 1 so -target.length = -1
+//  // if ('Bastian'.substr(-1) === 'n')
+//  // if ('n' === 'n')
+//  
+//  // Step 2. Return a boolean (true or false)
+//    return true;
+//  } else {
+//    return false;
+//  }
+//}
+    
+/* Refactored */
+    
+function confirmEnding(str, target) {
+  return str.substr(-target.length) === target;
+}
+    
+/* 
+stringLength - targetLength
+    7        -     1       = 6
+So str.substr(stringLength - targetLength) returns the 6th character (index starts at 0), which is 'n'.
+If only a single index parameter (as in this case) the rest of the string from this 'start' index is extracted. Which is why substring is returned 'n' rather than 'Bastia'.
+*/
+    
+console.log(
+//confirmEnding("Bastian", "n") 
+//confirmEnding("Connor", "n") 
+//confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification") 
+confirmEnding("He has to give me a new name", "name") 
+//confirmEnding("Open sesame", "same") 
+//confirmEnding("Open sesame", "pen") 
+//confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain") 
+);
+    
+</script>
+
+</body>
+</html>

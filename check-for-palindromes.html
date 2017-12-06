@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Check for palindromes</title>
+    </head>
+<body>
+    
+    <script>
+    
+        function palindrome(str) {
+            
+            // remove all non-alphanumeric characters and make lowercase
+            var alphaNumeric = str.replace(/[^0-9a-zA-Z]/g, '').toLowerCase();
+            console.log(alphaNumeric);
+            
+            // reverse string
+            var reversed = alphaNumeric.split('').reverse().join('');
+            console.log(reversed);
+            
+            // if string = reversed string
+            if (alphaNumeric === reversed) {
+                return true;
+            } else {
+                return false
+            }
+        }
+        
+ /* Refactored */
+        
+          function palindrome(str) {
+            var string = str.replace(/[^0-9a-zA-Z]/g, '').toLowerCase();
+            var stringReversed = string.split('').reverse().join('');
+            return string === stringReversed;
+        }  
+        
+
+
+console.log(
+//palindrome("eye") 
+//palindrome("eye")
+//palindrome("_eye") 
+//palindrome("race car") 
+//palindrome("not a palindrome") 
+//palindrome("A man, a plan, a canal. Panama") 
+//palindrome("never odd or even") 
+//palindrome("nope") 
+//palindrome("almostomla") 
+//palindrome("My age is 0, 0 si ega ym.") 
+//palindrome("1 eye for of 1 eye.") 
+//palindrome("0_0 (: /-\ :) 0-0") 
+//palindrome("five|\_/|four")
+//palindrome("2A3 3a2")
+palindrome("2_A3*3#A2")
+);
+
+
+        
+    </script> 
+</body>
+
+</html>
+
+

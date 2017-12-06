@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Return Largest Numbers in Arrays</title>
+  </head>
+<body>
+
+<!-- 
+// Loop through array of sub-arrays
+// Could sort each sub-array and return first (descending) or last (ascending) element.
+// Or, put first element in a 'largestNumber' variable then check if each number in the sub-array is greater than it. If it is, assign it to the variable.
+// Could:
+    > Remove every number smaller the 'largestNumber', when compared.
+    > Or put each largestNumber in another array and return it.
+// Use the map() method to perform a function on each sub-array and return a new array (unlike forEach that modifies the existing array.)
+-->
+    
+<script>
+    
+function largestOfFour(arr) {
+    
+    // Declare largest Number array
+    var largestNumber = [];
+    
+    // Populate largestNumber array with zeros corresponding to number of sub-arrays
+    for(var i = 0; i < arr.length; i++) {
+        largestNumber.push(0);
+    }
+    for(var i = 0; i < arr.length; i++) { // loop through outer array
+      for(var j = 0; j < arr[i].length; j++) { // loop through sub-arrays
+       if(arr[i][j] > largestNumber[i]) {         
+          largestNumber[i] = arr[i][j];
+        }
+    }
+ }
+ // return largest Number array
+ return largestNumber;
+}
+    
+console.log(
+//largestOfFour([4, 5, 1, 3])
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]) 
+//largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]) 
+//largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])
+);
+ 
+    
+    
+</script>
+
+</body>
+</html>

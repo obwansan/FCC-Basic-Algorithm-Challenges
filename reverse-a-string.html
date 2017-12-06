@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reverse a string</title>
+  </head>
+<body>
+
+<p>Click the button to display the array values after the reverse</p>
+
+<button onclick="reverseString('Greetings from Earth')">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+    
+//  function reverseString() {
+//      var string = 'hello';
+//      // split the string
+//      var split = string.split('');
+//      console.log(split);
+//      // reverse it
+//      var reversed = split.reverse();
+//      console.log(reversed);
+//      // join it
+//      var joined = reversed.join('')
+//      console.log(joined);
+//      document.getElementById("demo").innerHTML =  joined;
+//  }
+
+  // refactored
+  function reverseString(str) {
+    document.getElementById("demo").innerHTML = str.split('').reverse().join('');
+  }
+    
+//   function reverseString(str) {
+//    return str.split('').reverse().join('');
+//  }
+    
+console.log(reverseString(
+    'hello'
+//    'howdy'
+//    'Greetings from Earth'
+  )
+);
+    
+</script>
+
+</body>
+</html>

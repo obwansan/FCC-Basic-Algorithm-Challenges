@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Seek and Destroy</title>
+  </head>
+<body>
+
+<!-- 
+You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+
+Function call passes 3 arguments, but function only has 1 parameter. 
+So need to use arguments object to process all the arguments:
+
+"You can use the arguments object if you call a function with more arguments than it is formally declared to accept. This technique is useful for functions that can be passed a variable number of arguments. Use arguments.length to determine the number of arguments passed to the function, and then process each argument by using the arguments object. To determine the number of parameters in the function signature, use the Function.length property."
+
+Access the arguments following the array argument using the arguments object e.g. arguments[0], arguments[1] etc. 
+
+Loop through elements in array, comparing against each argument.
+
+Use filter() method. If element is not equal to the argument, return it. 
+
+    filter() calls a provided callback function once for each element in an array, and constructs a new array of all the values for which callback returns a value that coerces to true.
+
+    Array elements which do not pass the callback test are simply skipped, and are not included in the new array.
+-->
+    
+<script>
+    
+function destroyer(arr) {
+    
+  // turn arguments into an array  
+  var args = Array.prototype.slice.call(arguments);
+
+  // loop through elements
+  for (var i = 0; i < arr.length; i++) {
+      // loop through arguments
+      for (var j = 0; j < args.length; j++) {
+        // if element equals argument
+        if (arr[i] === args[j]) {
+            // delete element
+            delete arr[i];
+      }
+    }
+  }
+  // return truthy elements in array
+  return arr.filter(Boolean);
+}
+    
+console.log(
+//destroyer([1, 2, 3, 1, 2, 3], 2, 3) /*should return [1, 1].*/
+//destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) /*should return [1, 5, 1].*/
+//destroyer([3, 5, 1, 2, 2], 2, 3, 5) /*should return [1].*/
+//destroyer([2, 3, 2, 3], 2, 3) /*should return [].*/
+destroyer(["tree", "hamburger", 53], "tree", 53) /*should return ["hamburger"].*/
+);
+    
+</script>
+
+</body>
+</html>

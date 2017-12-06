@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Seek and Destroy</title>
+  </head>
+<body>
+
+<!-- 
+filter() calls a provided callback function once for each element in an array, and constructs a new array of all the values for which callback returns a value that coerces to true.
+
+Array elements which do not pass the callback test are simply skipped, and are not included in the new array.
+-->
+    
+<script>
+    
+function destroyer(arr) {
+  var args = Array.from(arguments).slice(1);
+  return arr.filter(function(el) {
+    return !args.includes(el);
+  });
+}
+    
+/* Code Explanation:
+
+Declare a variable named args and set it equal to a new Array object from() the arguments passed into the function. On the same or next line, use the slice() method on args starting from the second index, 1. This separates the arguments used for filtering into their own array of args.
+
+Return the filtered array, using includes() in the callback function to check if val is not in args; returning true to keep the value in the original array or false to remove it. */
+    
+console.log(
+//destroyer([1, 2, 3, 1, 2, 3], 2, 3) /*should return [1, 1].*/
+destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) /*should return [1, 5, 1].*/
+//destroyer([3, 5, 1, 2, 2], 2, 3, 5) /*should return [1].*/
+//destroyer([2, 3, 2, 3], 2, 3) /*should return [].*/
+//destroyer(["tree", "hamburger", 53], "tree", 53) /*should return ["hamburger"].*/
+);
+    
+</script>
+
+</body>
+</html>

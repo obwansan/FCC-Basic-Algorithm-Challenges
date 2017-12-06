@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chunky Monkey</title>
+  </head>
+<body>
+
+<!-- 
+Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
+-->
+    
+<script>
+
+    function chunkArrayInGroups(arr, size) {
+  
+        var newArray = [];
+        while (arr.length) {
+            newArray.push(arr.splice(0, size));
+        }
+        return newArray; 
+    }   
+   
+/* 
+NOTE: splice() returns the removed elements in a NEW ARRAY so don't need to create a new one to put them in.
+
+splice() removes the elements from the array so array will decrease in length each loop [while (arr.length > 0)]. slice() doesn't remove elements so have to decrease array length by size each loop.
+*/
+    
+console.log(
+//chunkArrayInGroups(["a", "b", "c", "d"], 2) 
+    /*should return [["a", "b"], ["c", "d"]].*/
+//chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3) 
+//    /*should return [[0, 1, 2], [3, 4, 5]].*/
+//chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2) 
+//    /*should return [[0, 1], [2, 3], [4, 5]].*/
+//chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4) 
+//    /*should return [[0, 1, 2, 3], [4, 5]].*/
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3) 
+//    /*should return [[0, 1, 2], [3, 4, 5], [6]].*/
+//chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)
+//    /*should return [[0, 1, 2, 3], [4, 5, 6, 7], [8]].*/
+//chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2) 
+//    /*should return [[0, 1], [2, 3], [4, 5], [6, 7], [8]].*/
+);
+    
+</script>
+
+</body>
+</html>

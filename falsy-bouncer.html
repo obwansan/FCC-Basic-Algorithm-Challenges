@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Falsy Bouncer</title>
+  </head>
+<body>
+
+<!-- 
+Remove all falsy values from an array.
+
+Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+
+filter() calls a provided callback function once for each element in an array, and constructs a new array of all the values for which callback returns a value that coerces to true.
+
+if (Boolean(arr[i]) === false) {
+    // don't push it to a new array
+})
+-->
+    
+<script>
+
+// Long version
+    
+//    function bouncer(arr) {
+//        return arr.filter(function(el){
+//            if (Boolean(el) === true) {
+//                return el;
+//            }
+//        });
+//    }
+
+    
+// Condensed version
+    
+//    function bouncer(arr) {
+//        return arr.filter(function(el){
+//            return (Boolean(el));
+//        });
+//    }
+    
+// Most concise / elegant version
+    
+    function bouncer(arr) {
+        return arr.filter(function(el){
+            return el;
+        });
+    } 
+   
+/* 
+The filter() method runs a function on each element (el) in the array and constructs/returns a new array of all the values for which callback returns a value that coerces to true. 
+
+The Boolean method/function returns the boolean value of the argument passed to it. Don't need to use it, however, as the filter method only returns values (to the newly constructed array) that the callback function 'coerces to true'. Which means the callback function will only return 'truthy' values.
+*/
+    
+console.log(
+bouncer([7, "ate", "", false, 9]) /*should return [7, "ate", 9].*/
+//bouncer(["a", "b", "c"]) /*should return ["a", "b", "c"].*/
+//bouncer([false, null, 0, NaN, undefined, ""]) /*should return [].*/
+//bouncer([1, null, NaN, 2, undefined]) /*should return [1, 2].*/
+);
+    
+</script>
+
+</body>
+</html>

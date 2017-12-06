@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Seek and Destroy</title>
+  </head>
+<body>
+
+<!-- 
+You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+-->
+    
+<script>
+    
+function destroyer(arr) {
+    
+    
+    
+    
+    
+//    var removedElements = [];
+//
+//    // Access each element in array
+//    for(var j = 0; j < arr.length; j++){
+//            
+//        //Access the arguments after the array
+//        for(var i = 1; i < arguments.length; i++){
+//        
+//            // if element = argument, remove argument
+//            if (arguments[i] === arr[j]) {
+//                removedElements += arr.splice(arr[j], 1)
+//            }
+//        } 
+//    }
+//    console.log(removedElements);
+//    return arr;  
+    
+    // Problem: Looping through arguments means the elements that don't match are being pushed twice (e.g. pushed when checked against 2 and again when checked against 3).
+    
+    
+//    console.log(arr);
+//    console.log(arr.length);
+//    console.log(Function.length);
+//    console.log(arguments.length);
+//    console.log(arguments);
+//    console.log(arguments[0]);
+//    console.log(arguments[1]);
+//    console.log(arguments[2]);
+    
+}
+     
+/* 
+Function call passes 3 arguments, but function only has 1 parameter. 
+So need to use arguments object to process all the arguments:
+
+"You can use the arguments object if you call a function with more arguments than it is formally declared to accept. This technique is useful for functions that can be passed a variable number of arguments. Use arguments.length to determine the number of arguments passed to the function, and then process each argument by using the arguments object. To determine the number of parameters in the function signature, use the Function.length property."
+
+Access the arguments following the array argument using the arguments object e.g. arguments[0], arguments[1] etc. 
+
+Loop through elements in array, comparing against each argument.
+
+Use filter() method. If element is not equal to the argument, return it. 
+
+    filter() calls a provided callback function once for each element in an array, and constructs a new array of all the values for which callback returns a value that coerces to true.
+
+    Array elements which do not pass the callback test are simply skipped, and are not included in the new array.
+*/
+    
+console.log(
+destroyer([1, 2, 3, 1, 2, 3], 2, 3) /*should return [1, 1].*/
+//destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) /*should return [1, 5, 1].*/
+//destroyer([3, 5, 1, 2, 2], 2, 3, 5) /*should return [1].*/
+//destroyer([2, 3, 2, 3], 2, 3) /*should return [].*/
+//destroyer(["tree", "hamburger", 53], "tree", 53) /*should return ["hamburger"].*/
+);
+    
+</script>
+
+</body>
+</html>

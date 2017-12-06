@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title Case a Sentence - map(), charAt(), slice()</title>
+  </head>
+<body>
+
+<script>
+    
+    function titleCase(str) {
+      
+//        // Step 1: Lowercase the string
+//        str = str.toLowerCase();
+//        
+//        // Step 2: Split string into array of words
+//        str = str.split(' ');
+//        
+//        // Step 3: Capitalise each word
+//        str = str.map(function(word){
+//            return word.charAt(0).toUpperCase() + word.slice(1);
+//        });
+//        // join array of words back into string and return
+//        return str.join(' ');
+    } 
+   
+/* Refactored */
+    
+       function titleCase(str) {
+          return str.toLowerCase().split(' ').map(function(word){
+             return word.charAt(0).toUpperCase() + word.slice(1);
+          }).join(' ');
+       }  
+    
+console.log(
+//titleCase("I'm a little tea pot")
+titleCase("sHoRt AnD sToUt")
+//titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")
+);
+ 
+    
+    
+</script>
+
+</body>
+</html>

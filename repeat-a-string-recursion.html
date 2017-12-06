@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Repeat a string</title>
+  </head>
+<body>
+
+<!-- 
+Repeat a given string (first argument) num times (second argument). Return an empty string if num is not a positive number.
+-->
+    
+<script>
+
+    
+function repeatStringNumTimes(str, num) {
+  
+    // Step 1. Check if num is negative and return an empty string if true
+    if (num <= 0) {
+        return "";
+    }
+  
+    // Step 2. [Base case] Check if num equal to 1 and return the string itself if true
+    if (num === 1) {
+        return str; //  3rd call: return "abc": (num decremented to 1)
+    }
+    
+    // Step 3. [Recursive case] Use recursion
+    else {
+        return str + repeatStringNumTimes(str, num - 1); 
+        // 2nd call: return "abc" + "abc" (num is 2)
+        // 1st call: return "abc" + "abcabc" (num is 3)
+    }
+  /* 
+    First Part of the recursion method
+    You need to remember that you won’t have just one call, you’ll have several nested calls
+    
+                      num       str + repeatStringNumTimes(string, times - 1)
+      1st call         3                 "abc" + ("abc", 3 - 1)
+      2nd call         2                 "abc" + ("abc", 2 - 1)
+      3rd call         1                 "abc" => if (times === 1) return string;
+
+    Second part of the recursion method
+    
+      3rd call will return     "abc"        (to the 2nd call)
+      2nd call will return     "abcabc"     (to the 1st call ["abc" added to returned "abc"])
+      1st call will return     "abcabcabc"  (to the program / console ["abc" added to returned "abcabc"])
+      
+  */
+}
+       
+// Refactored
+    
+//function repeatStringNumTimes(str, num) {
+//    if (num <= 0) {
+//        return "";
+//    }
+//    if (num === 1) {
+//        return str;
+//    }
+//    else {
+//        return str + repeatStringNumTimes(str, num - 1); 
+//    }
+//}
+    
+/* 
+
+*/
+    
+console.log(
+//repeatStringNumTimes("*", 3) 
+repeatStringNumTimes("abc", 3) 
+//repeatStringNumTimes("abc", 4) 
+//repeatStringNumTimes("abc", 1) 
+//repeatStringNumTimes("*", 8) 
+//repeatStringNumTimes("abc", -2) 
+);
+    
+</script>
+
+</body>
+</html>

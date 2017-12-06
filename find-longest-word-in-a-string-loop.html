@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find longest word in a string</title>
+  </head>
+<body>
+    
+<!-- 
+Return the length of the longest word in the provided sentence.
+Your response should be a number.
+-->
+
+<script>
+    
+// Find longest word - for loop
+    
+//    function findLongestWord(str) {
+//        
+//        // split string into array of words (split on spaces)
+//        var words = str.split(' ');
+//        // declare a variable that will hold the length of the longest word
+//        var longestWord = 0;
+//        // loop through array
+//        for(var i = 0; i < words.length; i++) {
+//            // if word is longer than longestWord 
+//            if (words[i].length > longestWord) {
+//                // assign its length to the variable
+//                longestWord = words[i].length;
+//            }
+//        }
+//        // return the variable 
+//        return longestWord; 
+//    }
+    
+// Find longest word - sort()
+    
+      function findLongestWord(str) {
+          
+          var wordLengths = [];
+          // split string into array of words (split on spaces)
+          var words = str.split(' ');
+          // put word lengths in an array
+          for(var i = 0; i < words.length; i++){
+            wordLengths.push(words[i].length);
+          }
+          // sort the words in descending order
+          wordLengths.sort(function(a, b){
+              return b-a
+          });
+          return wordLengths[0];
+      }
+    
+var sortArray = ['The', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog'];
+    
+console.log(sortArray.sort());
+// Result: ["The", "brown", "dog", "fox", "jumped", "lazy", "over", "quick", "the"]
+// In Unicode, numbers come before upper case letters, which come before lower case letters.
+    
+    
+console.log(
+//findLongestWord("The quick brown fox jumped over the lazy dog")
+//findLongestWord("May the force be with you") 
+//findLongestWord("Google do a barrel roll") 
+findLongestWord("What is the average airspeed velocity of an unladen swallow")
+//findLongestWord("What if we try a super-long word such as otorhinolaryngology")
+);
+    
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
