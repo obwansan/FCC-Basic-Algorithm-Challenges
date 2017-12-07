@@ -11,19 +11,19 @@ Check if a string (first argument, str) ends with the given target string (secon
     
 <script>
 
-//function confirmEnding(str, target) {
-//  
-//  // Get length of target
-//  var targetLength = target.length;
-//  var stringLength = str.length;
-//  // Extract sub-string of chars from end of str that is length of target
-//  var subString = str.substring(stringLength - targetLength); 
-//  // Compare target and sub-string 
-//  if (target === subString) {
-//      return true;
-//  }
-//  return false;
-//}
+function confirmEnding(str, target) {
+ 
+ // Get length of target
+ var targetLength = target.length;
+ var stringLength = str.length;
+ // Extract sub-string of chars from end of str that is length of target
+ var subString = str.substring(stringLength - targetLength); 
+ // Compare target and sub-string 
+ if (target === subString) {
+     return true;
+ }
+ return false;
+}
     
 /* Refactored */
     
