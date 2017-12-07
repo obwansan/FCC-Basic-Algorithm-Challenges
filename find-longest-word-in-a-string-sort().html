@@ -20,33 +20,33 @@ console.log(sortArray.sort());
     
 // Version 1
     
-//      function findLongestWord(str) {
-//          
-//          var wordLengths = [];
-//          // split string into array of words (split on spaces)
-//          var words = str.split(' ');
-//          // put word lengths in an array
-//          for(var i = 0; i < words.length; i++){
-//            wordLengths.push(words[i].length);
-//          }
-//          // sort the word lengths in descending order
-//          wordLengths.sort(function(a, b){
-//              return b-a
-//          });
-//          return wordLengths[0];
-//      }
+     function findLongestWord(str) {
+         
+         var wordLengths = [];
+         // split string into array of words (split on spaces)
+         var words = str.split(' ');
+         // put word lengths in an array
+         for(var i = 0; i < words.length; i++){
+           wordLengths.push(words[i].length);
+         }
+         // sort the word lengths in descending order
+         wordLengths.sort(function(a, b){
+             return b-a
+         });
+         return wordLengths[0];
+     }
     
 // Version 2
     
-//    function findLongestWord(str) {
-//          // split string into array of words (split on spaces)
-//          var words = str.split(' ');
-//          // sort the words in descending order by length
-//          var sorted = words.sort(function(a, b){
-//              return b.length - a.length;
-//          });
-//          return sorted[0].length;
-//    }
+   function findLongestWord(str) {
+         // split string into array of words (split on spaces)
+         var words = str.split(' ');
+         // sort the words in descending order by length
+         var sorted = words.sort(function(a, b){
+             return b.length - a.length;
+         });
+         return sorted[0].length;
+   }
     
 // Version 2 refactored
     
@@ -71,11 +71,3 @@ findLongestWord("What if we try a super-long word such as otorhinolaryngology")
 
 </body>
 </html>
-
-
-
-
-
-
-
-
