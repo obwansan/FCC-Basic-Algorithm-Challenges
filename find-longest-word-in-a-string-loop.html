@@ -14,23 +14,23 @@ Your response should be a number.
     
 // Find longest word - for loop
     
-//    function findLongestWord(str) {
-//        
-//        // split string into array of words (split on spaces)
-//        var words = str.split(' ');
-//        // declare a variable that will hold the length of the longest word
-//        var longestWord = 0;
-//        // loop through array
-//        for(var i = 0; i < words.length; i++) {
-//            // if word is longer than longestWord 
-//            if (words[i].length > longestWord) {
-//                // assign its length to the variable
-//                longestWord = words[i].length;
-//            }
-//        }
-//        // return the variable 
-//        return longestWord; 
-//    }
+   function findLongestWord(str) {
+       
+       // split string into array of words (split on spaces)
+       var words = str.split(' ');
+       // declare a variable that will hold the length of the longest word
+       var longestWord = 0;
+       // loop through array
+       for(var i = 0; i < words.length; i++) {
+           // if word is longer than longestWord 
+           if (words[i].length > longestWord) {
+               // assign its length to the variable
+               longestWord = words[i].length;
+           }
+       }
+       // return the variable 
+       return longestWord; 
+   }
     
 // Find longest word - sort()
     
@@ -69,11 +69,3 @@ findLongestWord("What is the average airspeed velocity of an unladen swallow")
 
 </body>
 </html>
-
-
-
-
-
-
-
-
