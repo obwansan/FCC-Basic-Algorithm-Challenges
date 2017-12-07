@@ -13,7 +13,8 @@ Difference between substring() and substr()
 
 There's a subtle difference between the substring() and substr() methods, and you should be careful not get them confused.
 
-Where the arguments of the substring() method represent the starting and ending indexes, the arguments of substr() method represent the starting index and the length of characters to include in the resulting string.
+Where the arguments of the substring() method represent the starting and ending indexes, the arguments of 
+substr() method represent the starting index and the length of characters to include in the resulting string.
 _________________________________________
 
 With only a single 'start' argument, substring() works the same as substr().
@@ -21,19 +22,19 @@ With only a single 'start' argument, substring() works the same as substr().
     
 <script>
 
-//function confirmEnding(str, target) {
-//  
-//  // Get length of target
-//  var targetLength = target.length;
-//  var stringLength = str.length;
-//  // Extract sub-string of chars from end of str that is length of target
-//  var subString = str.substr(stringLength - targetLength); 
-//  // Compare target and sub-string 
-//  if (target === subString) {
-//      return true;
-//  }
-//  return false;
-//}
+function confirmEnding(str, target) {
+ 
+ // Get length of target
+ var targetLength = target.length;
+ var stringLength = str.length;
+ // Extract sub-string of chars from end of str that is length of target
+ var subString = str.substr(stringLength - targetLength); 
+ // Compare target and sub-string 
+ if (target === subString) {
+     return true;
+ }
+ return false;
+}
     
 /* Refactored */
     
