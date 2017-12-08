@@ -6,7 +6,9 @@
 <body>
 
 <!-- 
-The map() method creates a new array with the results of calling a provided function on every element in this array. Using map will call a provided callback function once for each element in an array, in order, and constructs a new array from the results.
+The map() method creates a new array with the results of calling a provided function on every element in this array. 
+Using map will call a provided callback function once for each element in an array, in order, and constructs a new 
+array from the results.
 
 The reduce() method applies a function against an accumulator and each value of the array to reduce it to a single value.
 
@@ -20,14 +22,15 @@ function largestOfFour(mainArray) {
     // Call the reduce() method on each sub-array  
     return subArray.reduce(function (accumulator, currentValue) {
       return Math.max(accumulator, currentValue);
-    }, 0); // 'initialValue': Sets initial value of accumulator to 0
+    }, 0); // 0 is 'initialValue'. It sets initial value of accumulator to 0
   });
 }
     
-/* The reduce() method returns the largest number from each sub-array to the map() method, which constructs a new array from the results. Calling the largestOfFour function returns the new array.
+/* The reduce() method returns the largest number from each sub-array to the map() method, which constructs a new array 
+from the results. Calling the largestOfFour function returns the new array.
 
 > The Math.max() function returns the largest of zero or more numbers.
-> reduce() passes Math.max an accumulator and each value of the array.
+> The reduce() method passes Math.max an accumulator and each value of the array.
 
 */
     
