@@ -6,12 +6,16 @@
 <body>
 
 <!-- 
-You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+You will be provided with an initial array (the first argument in the destroyer function), followed by one or more 
+arguments. Remove all elements from the initial array that are of the same value as these arguments.
 
 Function call passes 3 arguments, but function only has 1 parameter. 
 So need to use arguments object to process all the arguments:
 
-"You can use the arguments object if you call a function with more arguments than it is formally declared to accept. This technique is useful for functions that can be passed a variable number of arguments. Use arguments.length to determine the number of arguments passed to the function, and then process each argument by using the arguments object. To determine the number of parameters in the function signature, use the Function.length property."
+"You can use the arguments object if you call a function with more arguments than it is formally declared to accept. 
+This technique is useful for functions that can be passed a variable number of arguments. Use arguments.length to 
+determine the number of arguments passed to the function, and then process each argument by using the arguments object. 
+To determine the number of parameters in the function signature, use the Function.length property."
 
 Access the arguments following the array argument using the arguments object e.g. arguments[0], arguments[1] etc. 
 
@@ -19,7 +23,8 @@ Loop through elements in array, comparing against each argument.
 
 Use filter() method. If element is not equal to the argument, return it. 
 
-    filter() calls a provided callback function once for each element in an array, and constructs a new array of all the values for which callback returns a value that coerces to true.
+    filter() calls a provided callback function once for each element in an array, and constructs a new array of all 
+    the values for which callback returns a value that coerces to true.
 
     Array elements which do not pass the callback test are simply skipped, and are not included in the new array.
 -->
@@ -44,37 +49,26 @@ function destroyer(arr) {
   }
   // return truthy elements in array
   return arr.filter(function(el){
-      return Boolean(el);
+      return Boolean(el); // only returns elements that evaluate to true
   });
 }
-    
-/*Refactored*/
-function destroyer(arr) {
-  var args = Array.prototype.slice.call(arguments);
-  for (var i = 0; i < arr.length; i++) {
-      for (var j = 0; j < args.length; j++) {
-        if (arr[i] === args[j]) {
-            delete arr[i];
-      }
-    }
-  }
-  return arr.filter(function(el){
-      return Boolean(el);
-  });
-}  
-    
+   
 /*
 Code Explanation:
 
-Create an array of arguments using Array.prototype.slice.call() and store it in the variable args. We’ll use this to check against arr.
+Create an array of arguments using Array.prototype.slice.call() and store it in the variable args. 
+We’ll use this to check against arr.
 
-Start a basic for loop to iterate through arr. Nest another for loop inside the first, changing the integer variable j and arr to args. This second loop will iterate through args .
+Start a basic for loop to iterate through arr. Nest another for loop inside the first, changing the integer 
+variable j and arr to args. This second loop will iterate through args .
 
-Within the second loop create an if statement, checking strictly === that the current val of arr[i] is equal to args[j].
+Within the second loop create an if statement, checking strictly === that the current val of arr[i] is 
+equal to args[j].
 
 If the value at the current index is equal in both arrays, use delete to remove it from arr.
 
-Outside of the nested loops: return the modified array using the Boolean object as a filter for any null's created by the delete operator.
+Outside of the nested loops: return the modified array using the Boolean object as a filter for any null's 
+created by the delete operator.
 
 Note: The Boolean() function tells you if an expression or variable is true or false.
 */
