@@ -13,28 +13,26 @@
 
 <script>
     
-//  function reverseString() {
-//      var string = 'hello';
-//      // split the string
-//      var split = string.split('');
-//      console.log(split);
-//      // reverse it
-//      var reversed = split.reverse();
-//      console.log(reversed);
-//      // join it
-//      var joined = reversed.join('')
-//      console.log(joined);
-//      document.getElementById("demo").innerHTML =  joined;
-//  }
+ function reverseString1() {
+     var string = 'hello';
+     // split the string
+     var split = string.split('');
+     // reverse it
+     var reversed = split.reverse();
+     // join it
+     var joined = reversed.join('')
+     document.getElementById("demo").innerHTML =  joined;
+ }
 
   // refactored
   function reverseString(str) {
     document.getElementById("demo").innerHTML = str.split('').reverse().join('');
   }
-    
-//   function reverseString(str) {
-//    return str.split('').reverse().join('');
-//  }
+  
+  // return in console
+  function reverseString2(str) {
+   return str.split('').reverse().join('');
+ }
     
 console.log(reverseString(
     'hello'
