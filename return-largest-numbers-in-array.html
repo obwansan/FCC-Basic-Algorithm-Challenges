@@ -6,15 +6,18 @@
 <body>
 
 <!-- 
-// Loop through array of sub-arrays
-// Could sort each sub-array and return first (descending) or last (ascending) element.
-// Or, put first element in a 'largestNumber' variable then check if each number in the sub-array is greater than it. If it is, assign it to the variable.
-// Could:
+Loop through array of sub-arrays
+Could sort each sub-array and return first (descending) or last (ascending) element.
+Or, put first element in a 'largestNumber' variable then check if each number in the sub-array is greater than it. 
+If it is, assign it to the variable.
+Could:
     > Remove every number smaller the 'largestNumber', when compared.
     > Or put each largestNumber in another array and return it.
-// Use the map() method to perform a function on each sub-array and return a new array (unlike forEach that modifies the existing array.)
+Use the map() method to perform a function on each sub-array and return a new array (unlike forEach that modifies 
+the existing array.)
 
-Problem is each subsequent pairs of numbers are being compared. Need to store the first number in array and compare each subsequent one with that.
+Problem is each subsequent pairs of numbers are being compared. Need to store the first number in array and compare 
+each subsequent one with that.
 
 Use sort() to put them in ascending order before comparing? But wouldn't work if all numbers in sub-array are the same!
 -->
@@ -27,12 +30,10 @@ function largestOfFour(arr) {
     var number = 0;
     var largestNumberArray = [];
     
-    // Step 1: loop through outer array 
+    // loop through outer array 
     for (var i = 0; i < arr.length; i++) {
-//        console.log(arr[i]);
         // loop through inner array
         for (var j = 0; j < arr[i].length; j++) {
-//            console.log(arr[i][j]);
             if (arr[i][j+1] > arr[i][j]) {
                 largestNumber = arr[i][j+1];
             } 
@@ -48,8 +49,6 @@ largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 85
 //largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])
 );
  
-    
-    
 </script>
 
 </body>
