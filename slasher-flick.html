@@ -13,19 +13,20 @@ The head means the beginning of the array, or the zeroth index.
     
 <script>
 
-    function slasher(arr, howMany) {
+    function slasher(arr, n) {
       
         if (howMany === 0) {
             return arr;
         } else if (howMany > arr.length) {
             return [];
         } else {
-            return arr.slice(-(arr.length - howMany));
+            return arr.slice(-(arr.length - n));
         }        
     } 
    
 /* 
-
+-(arr.length - howMany) means get the n number of elements to chop off array head, then slice that many elements 
+from the head of the array.
 */
     
 console.log(
