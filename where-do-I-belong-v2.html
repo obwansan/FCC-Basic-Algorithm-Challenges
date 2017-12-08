@@ -6,57 +6,42 @@
 <body>
 
 <!-- 
-Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
+Return the lowest index at which a value (second argument) should be inserted into an array (first argument) 
+once it has been sorted. The returned value should be a number.
 
-For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less than 2 (index 1).
+For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less 
+than 2 (index 1).
 
-Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has been sorted it will look like [3,5,20] and 19 is less than 20 (index 2) and greater than 5 (index 1).
+Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has been sorted it will look 
+like [3,5,20] and 19 is less than 20 (index 2) and greater than 5 (index 1).
 -->
     
 <script>
     
-//    function getIndexToIns(arr, num) {
-//        
-//        if (num < 0) {
-//            return "Number must be 0 or greater";
-//        }
-//        
-//        // Sort the array
-//        var sortedArray = arr.sort(function(a, b){
-//            return a - b;
-//        });
-//        console.log(sortedArray);
-//        
-//        // check if num is greater than each element
-//        for(var i = 0; i < sortedArray.length; i++) {
-//            
-//            // if array number is bigger than or equal to num
-//            if (sortedArray[i] > num || sortedArray[i] === num){
-//                return sortedArray.indexOf(sortedArray[i]);
-//            } 
-//        }
-//        return sortedArray.length;
-//    }  
+// For loop
+  
+   function getIndexToIns(arr, num) {
+       
+       if (num < 0) {
+           return "Number must be 0 or greater";
+       }
+       // Sort the array
+       var sortedArray = arr.sort(function(a, b){
+           return a - b;
+       }); 
+       // check if num is greater than each element
+       for(var i = 0; i < sortedArray.length; i++) {
+           
+           // if array number is bigger than or equal to num
+           if (sortedArray[i] > num || sortedArray[i] === num){
+               return sortedArray.indexOf(sortedArray[i]);
+           } 
+       }
+       return sortedArray.length;
+   }
     
-// Without comments
-    
-//    function getIndexToIns(arr, num) {
-//        if (num < 0) {
-//            return "Number must be 0 or greater";
-//        }
-//        var sortedArray = arr.sort(function(a, b){
-//            return a - b;
-//        });
-//        for(var i = 0; i < sortedArray.length; i++) {
-//            if (sortedArray[i] >= num){
-//                return sortedArray.indexOf(sortedArray[i]);
-//            } 
-//        }
-//        return sortedArray.length;
-//    } 
-    
-// Refactored
-    
+// For loop refactored
+  
     function getIndexToIns(arr, num) {
         
         arr.sort(function(a, b){
@@ -68,24 +53,24 @@ Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has
         }
         return arr.length;
     } 
-    
+ 
 // forEach()
     // (item >= num) doesn't work. 
     
-//    function getIndexToIns(arr, num) {
-//        if (num < 0) {
-//            return "Number must be 0 or greater";
-//        }
-//        var sortedArray = arr.sort(function(a, b){
-//            return a - b;
-//        });
-//        sortedArray.forEach(function(item){
-//            if (item >= num) {
-//                return sortedArray.indexOf(item);
-//            }
-//        });
-//        return sortedArray.length;
-//    }   
+   function getIndexToIns(arr, num) {
+       if (num < 0) {
+           return "Number must be 0 or greater";
+       }
+       var sortedArray = arr.sort(function(a, b){
+           return a - b;
+       });
+       sortedArray.forEach(function(item){
+           if (item >= num) {
+               return sortedArray.indexOf(item);
+           }
+       });
+       return sortedArray.length;
+   }   
 
        
 console.log(
