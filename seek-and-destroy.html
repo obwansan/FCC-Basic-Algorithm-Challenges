@@ -6,7 +6,8 @@
 <body>
 
 <!-- 
-You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+You will be provided with an initial array (the first argument in the destroyer function), followed by one or 
+more arguments. Remove all elements from the initial array that are of the same value as these arguments.
 -->
     
 <script>
@@ -15,11 +16,9 @@ function destroyer(arr) {
 
     var newArray = [];
     //Access the arguments after the array
-    for(var i = 1; i < arguments.length; i++){
-//        console.log(arguments[i]);
+    for (var i = 1; i < arguments.length; i++){
         // check each argument against each element
-        for(var j = 0; j < arr.length; j++){
-            console.log(arr[j]);
+        for (var j = 0; j < arr.length; j++){
             if (arguments[i] !== arr[j]) {
                 newArray.push(arr[i]);
             }
@@ -43,7 +42,10 @@ function destroyer(arr) {
 Function call passes 3 arguments, but function only has 1 parameter. 
 So need to use arguments object to process all the arguments:
 
-"You can use the arguments object if you call a function with more arguments than it is formally declared to accept. This technique is useful for functions that can be passed a variable number of arguments. Use arguments.length to determine the number of arguments passed to the function, and then process each argument by using the arguments object. To determine the number of parameters in the function signature, use the Function.length property."
+"You can use the arguments object if you call a function with more arguments than it is formally declared to accept. 
+This technique is useful for functions that can be passed a variable number of arguments. Use arguments.length to 
+determine the number of arguments passed to the function, and then process each argument by using the arguments object. 
+To determine the number of parameters in the function signature, use the Function.length property."
 
 Access the arguments following the array argument using the arguments object e.g. arguments[0], arguments[1] etc. 
 
@@ -51,7 +53,8 @@ Loop through elements in array, comparing against each argument.
 
 Use filter() method. If element is not equal to the argument, return it. 
 
-    filter() calls a provided callback function once for each element in an array, and constructs a new array of all the values for which callback returns a value that coerces to true.
+    filter() calls a provided callback function once for each element in an array, and constructs a new array of all 
+    the values for which callback returns a value that coerces to true.
 
     Array elements which do not pass the callback test are simply skipped, and are not included in the new array.
 */
