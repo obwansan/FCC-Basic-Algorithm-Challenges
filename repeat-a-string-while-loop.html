@@ -11,20 +11,22 @@ Repeat a given string (first argument) num times (second argument). Return an em
     
 <script>
 
-//function repeatStringNumTimes(str, num) {
-//  
-//    if (num < 0) 
-//        return "";
-//    
-//    var array = [];
-//    var i = 0;
-//    while (i < num) {
-//        array.push(str);
-//        i++;
-//    }
-//    return array.join('');
-//}
-    
+// while loop
+function repeatStringNumTimes(str, num) {
+ 
+   if (num < 0) 
+       return "";
+   
+   var array = [];
+   var i = 0;
+   while (i < num) {
+       array.push(str);
+       i++;
+   }
+   return array.join('');
+}
+
+// do while loop
 function repeatStringNumTimes(str, num) {
   
     if (num < 0) 
@@ -38,10 +40,6 @@ function repeatStringNumTimes(str, num) {
     } while (i < num);
     return repeatedString;
 }
-    
-/* 
-
-*/
     
 console.log(
 repeatStringNumTimes("*", 3) 
